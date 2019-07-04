@@ -16,6 +16,6 @@ const searchBreed = function(breed) {
     // console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
     // console.log(typeof data);
   });
-}
+};
 
 searchBreed(args[0]);
