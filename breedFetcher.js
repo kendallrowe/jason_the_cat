@@ -7,10 +7,10 @@ const fetchBreedDescription = function(breedName, callback) {
     
     if (error) {
       callback(error);
-    } else if (JSON.parse(body)[0] === undefined) {
-      callback("Hm. We couldn't find the breed you requested. Try checking your search term.");
+    } else if (body === "[]") {
+      callback(null, "Hm. We couldn't find the breed you requested. Try checking your search term.");
     } else {
-      callback("", JSON.parse(body)[0].description);
+      callback(null, JSON.parse(body)[0].description.trim());
     }
 
   });
